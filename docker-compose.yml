@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    image: koteeq/tiktok-fav-publisher:latest
+    image: lionzxy/tiktok-fav-publisher:latest
     restart: always
     depends_on:
       - redis
