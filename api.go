@@ -4,11 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/valyala/fasthttp"
 	"math/rand"
 	"net/http"
 	"regexp"
 	"time"
+
+	"github.com/valyala/fasthttp"
 )
 
 const Aid = 1233
@@ -46,7 +47,7 @@ func getLikedVideos(secUserID string, count int) ([]video, error) {
 	res := &fasthttp.Response{}
 
 	req.Header.SetMethod(http.MethodGet)
-	req.SetRequestURI("https://api16-normal-c-alisg.tiktokv.com/aweme/v1/aweme/favorite/?" +
+	req.SetRequestURI("https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/aweme/favorite/?" +
 		fmt.Sprintf("aid=%d&device_id=%d&sec_user_id=%s&count=%d&manifest_version_code=%s",
 			Aid, 1000000000+seededRand.Intn(1000000000), secUserID, count, ManifestVersionCode))
 	req.Header.SetUserAgent(UserAgent)
